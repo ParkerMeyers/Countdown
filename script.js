@@ -53,7 +53,25 @@ var Countdown = {
         $sec_2  = this.$.seconds.eq(1);
     
         this.countdown_interval = setInterval(function() {
+				if (true) {
+					function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
+sleep(250).then(() => { 
+	var box2 = document.getElementsByClassName('countdown')[0];
+				
+	var box = document.getElementsByClassName('loading')[0];
+			
+					box.classList.add('box-transition');
+					box.classList.add('box-hidden');
+	box2.classList.add('visible');
+				
+					 
+});
+
+				}
+					
         if(that.total_seconds > 0) {
 
             --that.values.seconds;              
@@ -81,7 +99,7 @@ var Countdown = {
 					  var days2 = (Math.floor(that.values.days / 7));
 
 						document.getElementById("meetings").innerHTML = Math.ceil(days2) + " Meetings Left";
-
+						
 
             --that.total_seconds;
         } else {
